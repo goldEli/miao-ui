@@ -1,12 +1,6 @@
 import React from "react"
 import classNames from "classnames"
 
-/**
- * primary danger default link
- * disable 
- * onclick
- */
-
 enum BtnType {
   primary="primary",
   danger="danger",
@@ -49,7 +43,7 @@ const Button: React.FC<ButtonProps> = props => {
   );
 
   if (btnType === "link" && href !== void 0) {
-    return <a className={classes} {...restProps} href={href}>link</a>
+  return <a className={classes} {...restProps} href={href}>{props.children}</a>
   }
   return <button className={classes} disabled={disabled} {...restProps}>{props.children}</button>
 }
