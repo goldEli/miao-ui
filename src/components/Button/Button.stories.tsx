@@ -5,13 +5,12 @@ import { storiesOf } from "@storybook/react";
 import { actions } from "@storybook/addon-actions";
 
 import Button, { ButtonProps } from "./button";
-import "../../styles/index.scss";
 
-const Base = () => {
+
+const DefaultButton = () => {
   return (
     <>
       <Button onClick={() => alert("hello world")}>default button</Button>
-      <Button disabled>disabled button</Button>
     </>
   );
 };
@@ -31,6 +30,7 @@ const DifferentType = () => {
   return (
     <>
       <Button btnType="default">default</Button>
+      <Button disabled>disabled</Button>
       <Button btnType="primary">primary</Button>
       <Button btnType="danger">danger</Button>
       <Button btnType="link" target="blank" href="https://www.baidu.com">
@@ -41,6 +41,6 @@ const DifferentType = () => {
 };
 
 storiesOf("Button", module)
-  .add('基本', Base)
+  .add('介绍', DefaultButton)
   .add('不同大小的 Button', DifferentSize)
   .add('不同类型的 Button', DifferentType)

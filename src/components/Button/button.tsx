@@ -1,29 +1,33 @@
 import React from "react"
 import classNames from "classnames"
 
-enum BtnType {
-  primary="primary",
-  danger="danger",
-  link="link",
-  default="default"
-}
+type BtnType = "primary" | "danger" | "link" | "default"
 
-enum BtnSize {
-  small= "small",
-  large= "large",
-}
+type BtnSize = "small" | "large"
 
 type ButtonHTMLAttributes = React.ButtonHTMLAttributes<HTMLButtonElement>
 type AnchorHTMLAttributes = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-interface ButtonPropsBase {
-  btnType: keyof typeof BtnType;
-  btnSize: keyof typeof BtnSize;
+export interface ButtonPropsBase {
+  /**设置 Button 是否禁用 */
+  disabled?: boolean;
+  /**设置 Button 的类型*/
+  btnType?: BtnType;
+  /**设置 Button 的大小 */
+  btnSize?: BtnSize;
 }
 
 export type ButtonProps = Partial<ButtonHTMLAttributes> & Partial<ButtonPropsBase> & Partial<AnchorHTMLAttributes>
 
-const Button: React.FC<ButtonProps> = props => {
+/**
+ * 按钮组件，适合于页面中确定、提交等交互
+ * ### 组件引入
+ * ```js
+ * import {Button} from "@miao-ui"
+ * ```
+ * 
+ */
+export const Button: React.FC<ButtonProps> = props => {
   const {
     disabled,
     btnType,
@@ -50,7 +54,6 @@ const Button: React.FC<ButtonProps> = props => {
 
 Button.defaultProps={
   disabled: false,
-  btnType: BtnType.default
+  btnType: "default"
 }
-
 export default Button
