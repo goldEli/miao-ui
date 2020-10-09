@@ -1,10 +1,26 @@
 {
   "name": "miao_ui",
   "version": "0.1.0",
-  "private": true,
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "React Component UI",
+  "author": "miaoyu",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
+  "homepage": "https://github.com/goldEli/miao-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goldEli/miao-ui"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -24,8 +40,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run clean && npm run build-ts && npm run build-css",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
-    "clean": "rimraf ./build",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "clean": "rimraf ./dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
