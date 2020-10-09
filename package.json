@@ -1,5 +1,5 @@
 {
-  "name": "@miaoyu/miao-ui",
+  "name": "@samuel.miao/miao-ui",
   "version": "0.1.1",
   "private": false,
   "main": "dist/index.js",
