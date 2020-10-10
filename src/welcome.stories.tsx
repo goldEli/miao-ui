@@ -9,7 +9,7 @@ storiesOf('Welcome page', module)
         <p>miao-ui 基于 React 开发的一套组件库</p>
         <h3>安装试试</h3>
         <code>
-          npm install @miao-ui --save
+          npm install @samuel.miao/miao-ui --save
         </code>
       </>
     )
