@@ -15,7 +15,7 @@ const disabledProps: ButtonProps = {
 describe("test button component", () => {
   it("should render the correct default button", () => {
     const wrapper = render(<Button {...defaultProps}>test</Button>);
-    const element = wrapper.queryByText("test");
+    const element = wrapper.queryByText("test") as HTMLButtonElement ;
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("BUTTON")
     expect(element).toHaveClass("miao-btn miao-btn-default")
@@ -27,7 +27,7 @@ describe("test button component", () => {
   })
   it("should render the correct component base on different props", () => {
     const wrapper = render(<Button btnType="primary" btnSize="large" className="ttt">test</Button>);
-    const element = wrapper.queryByText("test");
+    const element = wrapper.queryByText("test") as HTMLButtonElement;
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("BUTTON")
     expect(element).toHaveClass("miao-btn miao-btn-large miao-btn-primary ttt")
@@ -35,7 +35,7 @@ describe("test button component", () => {
   })
   it("should render a link when btntype equals link and href is provided", () => {
     const wrapper = render(<Button btnType="link" href="https://www.baidu.com">link</Button>);
-    const element = wrapper.queryByText("link");
+    const element = wrapper.queryByText("link") as HTMLAnchorElement;
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("A")
 
@@ -44,7 +44,7 @@ describe("test button component", () => {
   it("should render a disabled button when disabled set to true", () => {
 
     const wrapper = render(<Button {...disabledProps}>test</Button>);
-    const element = wrapper.queryByText("test");
+    const element = wrapper.queryByText("test") as HTMLButtonElement;
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("BUTTON")
     expect(element.disabled).toBeTruthy()
