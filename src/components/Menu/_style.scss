@@ -1,7 +1,18 @@
 .miao-menu {
-
-}
-
-.miao-menu-item {
     
+    > .menu-item {
+            list-style-type: none;
+            &:hover {
+                cursor: pointer;
+            };
+            &.is-disabled {
+                color: $menu-item-disabled-color;
+                pointer-events: none;
+                cursor: default;
+            };
+            &.is-active {
+                color: $menu-item-active-color;
+            }
+    }
 }
+

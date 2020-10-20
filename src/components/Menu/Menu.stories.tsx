@@ -4,13 +4,20 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 // import { actions } from "@storybook/addon-actions";
 
-import Menu from "./menu";
+import Menu from "./index";
+
+const {Item} = Menu
 
 
 const DefaultMenu = () => {
   return (
     <>
-      <Menu>default button</Menu>
+      <Menu defaultIndex={0}>
+        <Item>Home</Item>
+        <Item>Products</Item>
+        <Item>VIP</Item>
+        <Item>Other</Item>
+      </Menu>
     </>
   );
 };
