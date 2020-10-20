@@ -1,6 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import { MenuItemProps } from "./menuItem";
+import {CSSTransition} from "react-transition-group";
 
 export interface SubMenuProps {
     title?: string;
@@ -27,11 +28,26 @@ const SubMenu: React.FC<SubMenuProps> = props => {
     }
 
     return (
-        <li key={props.index} className={classes}>
+        <li 
+            onMouseEnter={() => setOpenStatus(true)} 
+            onMouseLeave={() => setOpenStatus(false)}
+            key={props.index} 
+            className={classes}
+        >
             {props.title}
-            <ul className="miao-submenu">
-                {renderChildren()}
-            </ul>
+            <CSSTransition
+                in={openStatus}
+                timeout={300}
+                classNames="zoom-in-top"
+                unmountOnExit
+                appear
+            >
+                <ul className="miao-submenu">
+                    {renderChildren()}
+                </ul>
+            </CSSTransition>
+            
+            
         </li>
     )
 }
