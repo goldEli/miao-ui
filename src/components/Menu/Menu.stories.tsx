@@ -6,7 +6,7 @@ import { storiesOf } from "@storybook/react";
 
 import Menu from "./index";
 
-const {Item} = Menu
+const {Item, SubMenu} = Menu
 
 
 const DefaultMenu = () => {
@@ -16,7 +16,11 @@ const DefaultMenu = () => {
         <Item>Home</Item>
         <Item>Products</Item>
         <Item disabled>VIP</Item>
-        <Item>Other</Item>
+        <SubMenu title="Other">
+            <Item>sub menu 1</Item>
+            <Item>sub menu 2</Item>
+            <Item>sub menu 3</Item>
+        </SubMenu>
       </Menu>
     </>
   );

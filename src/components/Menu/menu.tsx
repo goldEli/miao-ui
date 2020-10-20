@@ -22,6 +22,7 @@ const Menu: React.FC<MenuProps> = props => {
     const [activeIndex, setActiveIndex] = React.useState(props.defaultIndex as string)
 
     const onChangeActiveIndex = (index: string) => {
+        console.log(index, 123)
         setActiveIndex(index)
     }
 
@@ -29,7 +30,7 @@ const Menu: React.FC<MenuProps> = props => {
         return React.Children.map(props.children, (child, index) => {
             const ele = child as React.FunctionComponentElement<MenuItemProps>
             const { displayName } = ele.type
-            if (displayName === "MenuItem") {
+            if (displayName === "MenuItem" || displayName === "SubMenu") {
                 return React.cloneElement(ele, {
                     index: index.toString()
                 })
