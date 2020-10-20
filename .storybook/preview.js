@@ -31,7 +31,7 @@ const storyWrapper = (stroyFn: any) => (
     {stroyFn()}
   </div>
 )
-addDecorator(storyWrapper)
+// addDecorator(storyWrapper)
 addDecorator(withInfo)
 addParameters({info: { inline: true, header: false}})
 const loaderFn = () => {

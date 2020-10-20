@@ -1,8 +1,11 @@
 import React from "react"
 import { MenuItemProps } from "./menuItem";
+import classNames from "classnames";
 
+type MenuMode = "horizontal" | "vertical"
 export interface MenuProps {
     defaultIndex?: string
+    mode?: MenuMode
 }
 
 interface MenuContext {
@@ -41,7 +44,15 @@ const Menu: React.FC<MenuProps> = props => {
         onChangeActiveIndex
     }
 
-    return <ul className="miao-menu">
+    const classes = classNames(
+        "miao-menu",
+        {
+            "miao-menu-horizontal": props.mode === "horizontal",
+            "miao-menu-vectical": props.mode === "vertical"
+        },
+    )
+
+    return <ul className={classes}>
         <menuContext.Provider value={contextProps}>
             {renderChildren()}
         </menuContext.Provider>
@@ -50,7 +61,8 @@ const Menu: React.FC<MenuProps> = props => {
 }
 
 Menu.defaultProps = {
-    defaultIndex: "0"
+    defaultIndex: "0",
+    mode: "horizontal"
 }
 
 export default Menu

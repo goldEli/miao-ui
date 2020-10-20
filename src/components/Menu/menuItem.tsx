@@ -6,7 +6,7 @@ type MenuItemHTMLAttributes = React.LiHTMLAttributes<HTMLLIElement>
 
 interface MenuItemBaseProps {
     disabled?: boolean;
-    index:string;
+    index?:string;
 }
 
 export type MenuItemProps = MenuItemHTMLAttributes & MenuItemBaseProps
@@ -28,7 +28,13 @@ const MenuItem: React.FC<MenuItemProps> = props => {
         className,
     );
 
-    return <li onClick={() => onChangeActiveIndex?.(props.index)} {...restProps} className={classes}>
+    const handleClick = () => {
+        if (!props.disabled && props.index !== void 0) {
+            onChangeActiveIndex?.(props.index)
+        }
+    }
+
+    return <li onClick={handleClick} {...restProps} className={classes}>
         {props.children}
     </li>
 }

@@ -1,18 +1,46 @@
 .miao-menu {
-    
+    display: flex;
+    flex-wrap: "wrap";
+    padding-left: 0;
+    margin-bottom: 30px;
+    box-shadow: $menu-box-shadow;
     > .menu-item {
-            list-style-type: none;
-            &:hover {
-                cursor: pointer;
-            };
-            &.is-disabled {
-                color: $menu-item-disabled-color;
-                pointer-events: none;
-                cursor: default;
-            };
-            &.is-active {
-                color: $menu-item-active-color;
-            }
+        list-style-type: none;
+        padding: $menu-item-padding-y $menu-item-padding-x;
+        cursor: pointer;
+        
+        &.is-disabled {
+            color: $menu-item-disabled-color;
+            pointer-events: none;
+            cursor: not-allowed;
+        };
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+        &.is-active, &:hover {
+            color: $menu-item-active-color;
+            border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        }
     }
+}
+
+.miao-menu-horizontal {
+    >.menu-item {
+        border-bottom: $menu-item-active-border-width solid transparent;
+    }
+    flex-direction: row;
+    border-bottom: $menu-border-width solid $menu-border-color;
+}
+.miao-menu-vectical {
+    flex-direction: column;
+    border-left: $menu-border-width solid $menu-border-color;
+    >.menu-item {
+        border-left: $menu-item-active-border-width solid transparent;
+        &.is-active, &:hover {
+            border-bottom: 0px;
+            border-left: $menu-item-active-border-width solid $menu-item-active-color;
+        }
+    }
+    
 }
 

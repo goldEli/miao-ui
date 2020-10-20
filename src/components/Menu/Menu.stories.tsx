@@ -22,6 +22,19 @@ const DefaultMenu = () => {
   );
 };
 
+const VectialtMenu = () => {
+  return (
+    <>
+      <Menu mode="vertical" defaultIndex={"0"}>
+        <Item>Home</Item>
+        <Item>Products</Item>
+        <Item disabled>VIP</Item>
+        <Item>Other</Item>
+      </Menu>
+    </>
+  );
+};
+
 
 // const DifferentSize = () => {
 //   return (
@@ -49,5 +62,6 @@ const DefaultMenu = () => {
 
 storiesOf("Menu", module)
   .add('介绍', DefaultMenu)
+  .add('垂直布局的 Menu', VectialtMenu)
 //   .add('不同大小的 Button', DifferentSize)
 //   .add('不同类型的 Button', DifferentType)
