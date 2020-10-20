@@ -12,10 +12,10 @@ const {Item} = Menu
 const DefaultMenu = () => {
   return (
     <>
-      <Menu defaultIndex={0}>
+      <Menu defaultIndex={"0"}>
         <Item>Home</Item>
         <Item>Products</Item>
-        <Item>VIP</Item>
+        <Item disabled>VIP</Item>
         <Item>Other</Item>
       </Menu>
     </>
