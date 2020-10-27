@@ -33,36 +33,15 @@ const VectialtMenu = () => {
         <Item>Home</Item>
         <Item>Products</Item>
         <Item disabled>VIP</Item>
-        <Item>Other</Item>
+        <SubMenu title="Other">
+            <Item>sub menu 1</Item>
+            <Item>sub menu 2</Item>
+            <Item>sub menu 3</Item>
+        </SubMenu>
       </Menu>
     </>
   );
 };
-
-
-// const DifferentSize = () => {
-//   return (
-//     <>
-//       <Button onClick={() => alert("hello world")}>default</Button>
-//       <Button btnSize="small">small</Button>
-//       <Button btnSize="large">large</Button>
-//     </>
-//   );
-// };
-
-// const DifferentType = () => {
-//   return (
-//     <>
-//       <Button btnType="default">default</Button>
-//       <Button disabled>disabled</Button>
-//       <Button btnType="primary">primary</Button>
-//       <Button btnType="danger">danger</Button>
-//       <Button btnType="link" target="blank" href="https://www.baidu.com">
-//         百度
-//       </Button>
-//     </>
-//   );
-// };
 
 storiesOf("Menu", module)
   .add('介绍', DefaultMenu)

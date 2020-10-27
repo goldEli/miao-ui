@@ -10,11 +10,13 @@ export interface MenuProps {
 
 interface MenuContext {
     activeIndex: string;
-    onChangeActiveIndex?: (index: string) => void
+    onChangeActiveIndex?: (index: string) => void;
+    mode: MenuMode;
 }
 
 export const menuContext = React.createContext<MenuContext>({
-    activeIndex: "0"
+    activeIndex: "0",
+    mode: "horizontal"
 })
 
 const Menu: React.FC<MenuProps> = props => {
@@ -41,7 +43,8 @@ const Menu: React.FC<MenuProps> = props => {
 
     const contextProps = {
         activeIndex: activeIndex,
-        onChangeActiveIndex
+        onChangeActiveIndex,
+        mode: props.mode as MenuMode,
     }
 
     const classes = classNames(
