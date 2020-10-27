@@ -9,7 +9,7 @@ miao-ui 基于 React 开发的一套组件库
   npm install @samuel.miao/miao-ui --save
 ```
 
-### Usage
+#### Usage
 ```
 // 加载样式
 import '@samuel.miao/miao-ui/dist/index.css'
