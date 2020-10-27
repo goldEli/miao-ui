@@ -22,7 +22,6 @@ const Menu: React.FC<MenuProps> = props => {
     const [activeIndex, setActiveIndex] = React.useState(props.defaultIndex as string)
 
     const onChangeActiveIndex = (index: string) => {
-        console.log(index, 123)
         setActiveIndex(index)
     }
 

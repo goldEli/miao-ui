@@ -2,11 +2,13 @@ import React from "react"
 import classNames from "classnames"
 import { MenuItemProps } from "./menuItem";
 import Transition from "../Transition";
+import Icon from "../Icon/icon"
 
 export interface SubMenuProps {
     title?: string;
     index?: string;
 }
+let timer: any
 
 const SubMenu: React.FC<SubMenuProps> = props => {
 
@@ -17,7 +19,7 @@ const SubMenu: React.FC<SubMenuProps> = props => {
     const renderChildren = () => {
         return React.Children.map(props.children, (child, index) => {
             const ele = child as React.FunctionComponentElement<MenuItemProps>
-            const {displayName} = ele.type
+            const { displayName } = ele.type
             if (displayName === "MenuItem") {
                 return React.cloneElement(ele, {
                     index: props.index + "-" + index.toString()
@@ -27,15 +29,27 @@ const SubMenu: React.FC<SubMenuProps> = props => {
         })
     }
 
+    
+    const handleMouse = (e: React.MouseEvent, toggle: boolean) => {
+        clearTimeout(timer)
+        e.preventDefault()
+        timer = setTimeout(() => {
+            setOpenStatus(toggle)
+        }, 300)
+    }
+
     return (
-        <li 
-            onMouseEnter={() => setOpenStatus(true)} 
-            onMouseLeave={() => setOpenStatus(false)}
-            key={props.index} 
+        <li
+            onMouseEnter={(e) => handleMouse(e, true)}
+            onMouseLeave={(e) => handleMouse(e, false)}
+            key={props.index}
             className={classes}
         >
-            {props.title}
-            <Transition 
+            <div className="submenu-title">
+                {props.title}
+                <Icon icon="angle-down" className="arrow-icon"/>
+            </div>
+            <Transition
                 in={openStatus}
                 timeout={300}
                 classNames="zoom-in-top"
@@ -46,7 +60,7 @@ const SubMenu: React.FC<SubMenuProps> = props => {
                     {renderChildren()}
                 </ul>
             </Transition>
-            
+
         </li>
     )
 }

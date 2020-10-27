@@ -18,8 +18,9 @@ const Icon: React.FC<IconProps> = (props) => {
   const classes = classNames('miao-icon', className, {
     [`icon-${theme}`]: theme
   })
+  
   return (
-    <FontAwesomeIcon icon={classes} {...restProps} />
+    <FontAwesomeIcon icon={classes} className={classes} {...restProps} />
   )
 }
 
