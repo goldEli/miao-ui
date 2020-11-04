@@ -5,12 +5,12 @@ miao-ui 基于 React 开发的一套组件库
 [查看文档](https://goldeli.github.io/miao-ui)
 
 #### Install
-```
+```shell
   npm install @samuel.miao/miao-ui --save
 ```
 
 #### Usage
-```
+```javascript
 // 加载样式
 import '@samuel.miao/miao-ui/dist/index.css'
 
@@ -20,16 +20,16 @@ import { Button } from '@samuel.miao/miao-ui'
 
 #### Development
 
-```
-// dev
+```shell
+# dev
 yarn storybook
 
-// test
+# test
 yarn test
 
-// build 
+# build for deployment
 yarn build
 
-// publish npm
+# publish npm
 yarn publish
 ```
