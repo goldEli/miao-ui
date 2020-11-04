@@ -13,6 +13,23 @@ miao-ui 基于 React 开发的一套组件库
 ```
 // 加载样式
 import '@samuel.miao/miao-ui/dist/index.css'
+
 // 引入组件
 import { Button } from '@samuel.miao/miao-ui'
+```
+
+#### Development
+
+```
+// dev
+yarn storybook
+
+// test
+yarn test
+
+// build 
+yarn build
+
+// publish npm
+yarn publish
 ```
