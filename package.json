@@ -37,6 +37,7 @@
     "start": "react-scripts start",
     "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
     "build": "npm run clean && npm run build-ts && npm run build-css",
+    "publish-npm": "npm run build && npm publish",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "clean": "rimraf ./dist",
     "test": "react-scripts test",
